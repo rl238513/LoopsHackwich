@@ -13,16 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     var fruitArray = ["Apples", "Banana", "Pears", "Grapes"]
-    
     var vegetablesArray = ["Onions", "Garlic", "Brocoli", "Squash"]
-    
     var memeArray = ["SpongeGar", "Big Chungus", "Do It", "Hello There"]
-    
     var snackArray = ["Chips", "Popcorn", "Peanuts", "Candy"]
-    
     var addressDictionary = ["nama": "Tom", "Address": "123 Fake Street", "zip": "123456"]
+    var output = ""
     
-    var output = " "
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,13 +41,49 @@ class ViewController: UIViewController {
     }
     
     @IBAction func arrayThree(_ sender: Any) {
+        for i in 0..<3{
+            print(i)
+            output += "\(memeArray[i])\n"
+        }
+        textView.text = output
     }
     
     @IBAction func arrayFour(_ sender: Any) {
+        for i in 1..<snackArray.count{
+            print(i)
+            output += "\(snackArray[i])\n"
+        }
+        textView.text = output
     }
     
     @IBAction func dictionary(_ sender: Any) {
+        output = ""
+        for (key,value) in addressDictionary{
+            print("\(key): \(value)")
+            output += "\(key): \(value)\n"
+        }
+        textView.text = output
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
